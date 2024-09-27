@@ -1,0 +1,54 @@
+:host {
+    small {
+      font-size: x-small;
+    }
+  }
+
+
+.title-container {
+  text-align: center;
+  margin-bottom: 20px; /* Adjust spacing as needed */
+}
+
+.title-text {
+  font-size: 2rem; /* Adjust size as needed */
+  text-align: center;
+  font-weight: bold;
+  color: #333; /* Adjust color as needed */
+}
+
+
+/* Ensure text alignment and spacing */
+.table {
+  text-align: center;
+}
+
+.table thead {
+  background-color: #343a40; /* Dark header background */
+  color: #ffffff; /* White text color */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f9f9f9; /* Stripe color */
+}
+
+.table-bordered {
+  border: 1px solid #dee2e6; /* Border color */
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #dee2e6; /* Border color for cells */
+}
+
+.card-title {
+  font-size: 1.25rem; /* Adjust title size */
+}
+
+.title-container {
+  margin-bottom: 1rem; /* Margin below the title */
+}
+
+.text-center {
+  text-align: center; /* Center text */
+}

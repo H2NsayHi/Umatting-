@@ -1,0 +1,42 @@
+<!-- Title -->
+<div class="title-container text-center mb-4">
+  <h1 class="title-text">TỔNG QUAN</h1>
+</div>
+
+<!-- Buttons to control auto-append, manual chart addition, delete, and export -->
+<div class="mb-4 text-center">
+  <button (click)="addChart()" class="btn btn-primary">Add Chart</button>
+  <button (click)="toggleAutoAppendCharts(true)" class="btn btn-success">Start Auto-Append</button>
+  <button (click)="toggleAutoAppendCharts(false)" class="btn btn-danger">Stop Auto-Append</button>
+  <button (click)="deleteCharts()" class="btn btn-warning">Delete All Charts</button>
+  <button (click)="exportExcel()" class="btn btn-info">Export Excel</button>
+  <button (click)="saveChartAsImage()" class="btn btn-secondary">Save Image</button> <!-- New Save Image button -->
+</div>
+
+<!-- Horizontal scrollable row for charts -->
+<div class="chart-container d-flex" style="overflow-x: scroll; white-space: nowrap;">
+  <div *ngFor="let chartData of displayedCharts; let i = index" class="chart-item" style="min-width: 400px; margin-right: 16px;">
+    <c-card class="mb-4">
+      <c-card-body>
+        <c-row>
+          <c-col sm="12">
+            <!-- Fmax text above the chart -->
+            <h4 class="card-title mb-0 text-center font-weight-bold">Fmax = {{ chartData.maxValue }}</h4>
+          </c-col>
+        </c-row>
+        <c-chart
+          [data]="chartData.data"
+          [height]="300"
+          [ngStyle]="{ 'marginTop.px': 20 }"
+          [options]="chartData.options"
+          [type]="'line'"
+        >
+        </c-chart>
+        <div class="text-center mt-3">
+          <!-- Cycle text below the chart -->
+          Cycle {{ i + 1 }}
+        </div>
+      </c-card-body>
+    </c-card>
+  </div>
+</div>
